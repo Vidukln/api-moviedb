@@ -7,6 +7,7 @@ import {
   getTVGenres,
   getTVShowsByGenre,
   getTVshows,
+  getVideoURLByMovieID,
 } from "../controllers/movieController.js";
 
 const router = express.Router();
@@ -22,5 +23,9 @@ router.route("/movie/:genreId").get(getMoviesByGenre);
 router.route("/tv").get(getTVshows);
 router.route("/tv/genre").get(getTVGenres);
 router.route("/tv/:genreId").get(getTVShowsByGenre);
+
+router.route("/video/:movieId").get(getVideoURLByMovieID);
+
+
 
 export default router;
