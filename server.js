@@ -31,7 +31,7 @@ app.use("/api/discover", movieRoutes);
 
 const __dirname = path.resolve();
 app.get("/", (req, res) => {
-  res.send("User Services API is running....");
+  res.send("User Services API is running on PORT 5003....");
 });
 
 // error ~Middleware
