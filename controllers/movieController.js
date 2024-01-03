@@ -3,6 +3,7 @@ import Movie from '../models/Movie.js'
 import MovieGenre from '../models/MovieGenre.js'
 import TVGenre from '../models/TVGenre.js';
 import TVShow from '../models/TVShow.js';
+import VideoURL from '../models/VideoURL.js';
 
 // @desc GET all
 // @route GET /api/discover/all
@@ -198,6 +199,18 @@ const getMoviesByGenre = asyncHandler(async (req, res) => {
   });
 });
 
+// @desc GET Movies depend on genre
+// @route GET /api/discover/video/:movieId
+// @access private
+const getVideoURLByMovieID = asyncHandler(async (req, res) => {
+  const movieId = req.params.movieId;
+
+  const url = await VideoURL.find({ movieID: movieId },{})
+
+  res.json({
+    key: url[0].videoID
+  });
+});
 
 
 
@@ -208,5 +221,6 @@ export {
   getTVGenres,
   getTVshows,
   getTVShowsByGenre,
-  getMoviesByGenre
+  getMoviesByGenre,
+  getVideoURLByMovieID
 }
