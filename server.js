@@ -31,7 +31,7 @@ app.use("/api/discover", movieRoutes);
 
 const __dirname = path.resolve();
 app.get("/", (req, res) => {
-  res.send("Movies Services API is Working on PORT 5003....");
+  res.send("Movies Services API is Working on PORT 5003 on AWS EC2....");
 });
 
 // error ~Middleware
